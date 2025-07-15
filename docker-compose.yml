@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image:  mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: "#!Hashem!_$%E^C(H)`a&dd*"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - "$PORT:$PORT"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: $DATABASE_URL
+    volumes:
+      - dbdata:/var/opt/mssql
+
+volumes:
+  dbdata:
