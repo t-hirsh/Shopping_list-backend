@@ -35,6 +35,7 @@ Duplicate the entire contents of env.example into a file named .env in the root 
    Run the following command to install the required packages:
    ```bash
    npm install
+   npm start
    ```
 
 5. **Access the Application**
