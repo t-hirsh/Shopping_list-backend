@@ -25,7 +25,6 @@ app.post('/shopping-list', async (req, res) => {
     }
 });
 
-// app.get('/shopping-list', async (req, res) => {
 app.get('/', async (req, res) => {
 try {
         const items = await ShoppingList.findAll();
